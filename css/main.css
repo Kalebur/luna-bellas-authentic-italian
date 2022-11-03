@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+header {
+  padding: 1rem 2rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.logo-nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 3rem;
+}
+.logo-nav .main-nav .nav-link {
+  display: inline-block;
+  vertical-align: bottom;
+}
+.logo-nav .main-nav .nav-link:not(:first-of-type) {
+  margin-left: 2rem;
+}

@@ -1,0 +1,17 @@
+.logo-nav {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 3rem;
+
+  .main-nav {
+    .nav-link {
+      display: inline-block;
+      vertical-align: bottom;
+
+      &:not(:first-of-type) {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
