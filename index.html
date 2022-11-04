@@ -20,18 +20,18 @@
         <p class="logo"><i class="fa-solid fa-pizza-slice"></i> Luna Bella's</p>
         <nav class="main-nav">
           <ul>
-            <li class="nav-link">Link 1</li>
-            <li class="nav-link">Link 2</li>
-            <li class="nav-link">Link 3</li>
-            <li class="nav-link">Link 4</li>
-            <li class="nav-link">Link 5</li>
+            <li class="nav-link"><a href="#story">Story</a></li>
+            <li class="nav-link"><a href="#food">Food</a></li>
+            <li class="nav-link"><a href="#staff">Staff</a></li>
+            <li class="nav-link"><a href="#wines">Wines</a></li>
+            <li class="nav-link"><a href="#location">Location</a></li>
           </ul>
         </nav>
       </div>
       <h1>Experience <span class="subheader">the flavors of Italy</span></h1>
       <a href="#book-now" class="btn">Book a Table</a>
     </header>
-    <section class="our-story">
+    <section class="our-story" id="story">
       <div class="content">
         <h2>Our Story</h2>
         <p>
@@ -47,7 +47,7 @@
         />
       </div>
     </section>
-    <section class="our-food">
+    <section class="our-food" id="food">
       <div class="content">
         <h2>Our Food</h2>
         <h3>Pasta</h3>
@@ -59,30 +59,30 @@
         </p>
       </div>
     </section>
-    <section class="our-staff">
+    <section class="our-staff" id="staff">
       <div class="content">
         <h2>Meet Our Staff</h2>
         <div class="staff-container">
           <div class="staff-card">
-            <img src="" />
-            <h3>A</h3>
+            <img src="assets/images/luna-bella.webp" />
+            <h3>Head Chef &mdash; Luna Bella</h3>
           </div>
           <div class="staff-card">
-            <img src="" />
-            <h3>B</h3>
+            <img src="assets/images/constantino.webp" />
+            <h3>Sous Chef &mdash; Constantino</h3>
           </div>
           <div class="staff-card">
-            <img src="" />
-            <h3>C</h3>
+            <img src="assets/images/trevor.webp" />
+            <h3>Sous Chef &mdash; Trevor</h3>
           </div>
           <div class="staff-card">
-            <img src="" />
-            <h3>D</h3>
+            <img src="assets/images/stephen.webp" />
+            <h3>Maître d' - Stephen</h3>
           </div>
         </div>
       </div>
     </section>
-    <section class="our-wines">
+    <section class="our-wines" id="wines">
       <div class="content">
         <h2>Our Wines</h2>
         <p>
@@ -97,11 +97,74 @@
     <section class="book-now" id="book-now">
       <h2>Book a Table</h2>
       <form action="">
-        <div class="input-group"></div>
+        <div class="input-group">
+          <label for="name">Name</label>
+          <input type="text" autocomplete="name" />
+        </div>
+        <div class="input-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" autocomplete="tel-area-code" />
+        </div>
+        <div class="input-group">
+          <label for="reservation-time">Reservation Day/Time</label>
+          <input type="date" autocomplete="off" />
+        </div>
+        <div class="input-group">
+          <label for="phone">Reservation Time</label>
+          <input type="time" />
+        </div>
+        <div class="input-group">
+          <label for="guest-count">Guest Count</label>
+          <input type="number" autocomplete="off" min="2" max="20" value="2" />
+        </div>
       </form>
     </section>
-    <section class="contact-info" id="location-contact">
-      <div class="content"></div>
+    <section class="contact-info" id="location">
+      <div class="content">
+        <h2>Our Location</h2>
+        <div class="contact-container">
+          <iframe
+            class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3141.383607104173!2d-84.51949948436756!3d38.061446503386435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88424480b138eb35%3A0xb6b8942a1d7f9f57!2sOld%20W%20Main%20St%2C%20Lexington%2C%20KY%2040508!5e0!3m2!1sen!2sus!4v1667530604077!5m2!1sen!2sus"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="hours">
+            <h3>Hours</h3>
+            <p>mon:<span class="time">4pm &mdash; 10pm</span></p>
+            <p>tue:<span class="time">4pm &mdash; 10pm</span></p>
+            <p>wed:<span class="time">4pm &mdash; 10pm</span></p>
+            <p>thu:<span class="time">4pm &mdash; 10pm</span></p>
+            <p>fri:<span class="time">4pm &mdash; 12am</span></p>
+            <p>sat:<span class="time">4pm &mdash; 12am</span></p>
+            <p>sun:<span class="time">12pm &mdash; 9pm</span></p>
+          </div>
+          <div class="contact-and-socials">
+            <h3>Contact Us</h3>
+            <p>P:(555) 555-5555</p>
+            <p>E:hello@lunabellasitalian.com</p>
+            <address>
+              7890 Old W Main St <br />
+              Lexington, KY 40508
+            </address>
+
+            <h3>Socials</h3>
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fa-brands fa-facebook-f"></i></a
+              ><a href="#" class="social-icon"
+                ><i class="fa-brands fa-twitter"></i></a
+              ><a href="#" class="social-icon"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <footer>
       <p>&copy;2022 Luna Bella's Italian Cuisine</p>

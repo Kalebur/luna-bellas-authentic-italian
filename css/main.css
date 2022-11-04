@@ -31,3 +31,14 @@ a {
 .logo-nav .main-nav .nav-link:not(:first-of-type) {
   margin-left: 2rem;
 }
+
+.social-icon {
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #135350;
+  font-size: 3rem;
+}
