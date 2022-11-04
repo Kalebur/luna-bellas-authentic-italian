@@ -6,7 +6,6 @@ pair with their food and provide clear contact information. Most importantly, th
 reservations and all "call-to-action" elements should direct the user to that end.
 
 ## Main Features
----
 * Fully responsive site with hamburger navigation on mobile screens smaller than 600px
 * Implement the ability to see information about their top 3 food categories and cycle through them using Javascript
 * CSS transitions to enhance the feel of interactivity
