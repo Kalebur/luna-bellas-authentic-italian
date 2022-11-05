@@ -1,11 +1,175 @@
-.social-icon {
-  height: 5rem;
-  width: 5rem;
+.social-icons {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: $radius-circle;
-  background-color: #135350;
+  justify-content: space-around;
 
-  font-size: 3rem;
+  .social-icon {
+    height: 7.5rem;
+    width: 7.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $radius-circle;
+    background-color: #135350;
+
+    font-size: 4rem;
+  }
+}
+
+#top {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  background: $gradient-bg-dark,
+    url("../assets/images/hero-background-sm-md.webp"), #111;
+  background-size: cover;
+  background-position: center;
+
+  .logo-nav {
+    .logo {
+      padding-top: 1rem;
+      padding-left: 2rem;
+      color: $color-white;
+
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      letter-spacing: 0.2rem;
+    }
+    .main-nav {
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      z-index: 10;
+      pointer-events: none;
+
+      .hamburger {
+        height: 5rem;
+        width: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 2.5rem;
+        right: 1rem;
+        cursor: pointer;
+        transform: $translate-neg-50-x;
+
+        font-size: 5rem;
+        color: $color-white;
+        z-index: 10;
+        pointer-events: initial;
+      }
+
+      ul {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-primary;
+        clip-path: circle(4rem at calc(100% - 6rem) 5.2rem);
+
+        li {
+          width: 100%;
+          text-align: center;
+          margin-left: 0;
+
+          &:not(:first-of-type) {
+            margin-top: 6rem;
+          }
+        }
+      }
+    }
+  }
+
+  h1 {
+    @include absolute-center;
+    transform: translate(-50%, -100%);
+    width: 100%;
+
+    font-family: $font-serif;
+    font-size: 3.5rem;
+    color: $color-white;
+    text-align: center;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    line-height: 2.75rem;
+
+    span {
+      display: block;
+      font-size: 2rem;
+      letter-spacing: 0.3rem;
+    }
+  }
+
+  .btn {
+    @include absolute-center;
+    transform: translate(-50%, 40%);
+    width: 60%;
+  }
+}
+
+.our-story {
+  background-color: $color-secondary;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: 2rem;
+      order: 1;
+    }
+
+    img {
+      max-width: 90%;
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+.our-food {
+  background: url(), $color-tertiary;
+}
+
+.our-staff {
+  background-color: $color-tertiary;
+
+  .content {
+    img {
+      margin: 3rem auto;
+    }
+
+    h3 {
+      font-size: 2rem;
+
+      &::after {
+        content: unset;
+      }
+    }
+  }
+}
+
+.our-wines {
+  background: url(), $color-tertiary;
+}
+
+.book-now {
+  background: url(), $color-tertiary;
+}
+
+.contact-info {
+  background: url(), $color-tertiary;
+
+  iframe {
+    width: 100%;
+    height: 35rem;
+  }
+}
+
+footer {
+  background-color: $color-primary;
+  padding: 2rem;
+  font-size: 2rem;
+  text-align: center;
 }

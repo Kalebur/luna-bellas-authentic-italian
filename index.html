@@ -12,13 +12,20 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <header id="top">
       <div class="logo-nav">
         <p class="logo"><i class="fa-solid fa-pizza-slice"></i> Luna Bella's</p>
-        <nav class="main-nav">
+        <nav class="main-nav" aria-expanded="false">
+          <i class="fa-solid fa-bars hamburger"></i>
           <ul>
             <li class="nav-link"><a href="#story">Story</a></li>
             <li class="nav-link"><a href="#food">Food</a></li>
@@ -41,7 +48,7 @@
           excepturi.
         </p>
         <img
-          src="assets/photos/grandma.png"
+          src="assets/images/grandma.webp"
           alt="Luna Bella's grandmother, Electra"
           srcset=""
         />
@@ -126,8 +133,6 @@
           <iframe
             class="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3141.383607104173!2d-84.51949948436756!3d38.061446503386435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88424480b138eb35%3A0xb6b8942a1d7f9f57!2sOld%20W%20Main%20St%2C%20Lexington%2C%20KY%2040508!5e0!3m2!1sen!2sus!4v1667530604077!5m2!1sen!2sus"
-            width="600"
-            height="450"
             style="border: 0"
             allowfullscreen=""
             loading="lazy"

@@ -9,14 +9,75 @@
   font-size: 62.5%;
 }
 
-header {
-  padding: 1rem 2rem;
+body {
+  overflow-x: hidden;
+  color: #fff;
 }
 
-a {
+a:link,
+a:visited {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+p {
+  font-size: 2rem;
+}
+
+.btn {
+  background-color: #ff3a3a;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+}
+
+h1,
+h2,
+h3,
+.logo,
+.btn {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h2,
+h3 {
+  position: relative;
+  margin-bottom: 2rem;
+}
+h2::after,
+h3::after {
+  content: "";
+  width: 80%;
+  height: 0.2rem;
+  background-color: #fff;
+  position: absolute;
+  bottom: -0.5rem;
+  left: 10%;
+  border-radius: 10rem;
+}
+
+.content {
+  padding: 3rem 2rem;
+}
+
+img {
+  max-width: 80%;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 10rem;
+  border: 5px solid #fff;
+  box-shadow: 0.5rem 1.5rem 1.5rem rgba(0, 0, 0, 0.9);
 }
 
 .logo-nav {
@@ -32,13 +93,160 @@ a {
   margin-left: 2rem;
 }
 
-.social-icon {
-  height: 5rem;
-  width: 5rem;
+.social-icons {
+  display: flex;
+  justify-content: space-around;
+}
+.social-icons .social-icon {
+  height: 7.5rem;
+  width: 7.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background-color: #135350;
-  font-size: 3rem;
+  font-size: 4rem;
+}
+
+#top {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../assets/images/hero-background-sm-md.webp"), #111;
+  background-size: cover;
+  background-position: center;
+}
+#top .logo-nav .logo {
+  padding-top: 1rem;
+  padding-left: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+}
+#top .logo-nav .main-nav {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+#top .logo-nav .main-nav .hamburger {
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 2.5rem;
+  right: 1rem;
+  cursor: pointer;
+  transform: translate(-50%);
+  font-size: 5rem;
+  color: #fff;
+  z-index: 10;
+  pointer-events: initial;
+}
+#top .logo-nav .main-nav ul {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff3a3a;
+  -webkit-clip-path: circle(4rem at calc(100% - 6rem) 5.2rem);
+          clip-path: circle(4rem at calc(100% - 6rem) 5.2rem);
+}
+#top .logo-nav .main-nav ul li {
+  width: 100%;
+  text-align: center;
+  margin-left: 0;
+}
+#top .logo-nav .main-nav ul li:not(:first-of-type) {
+  margin-top: 6rem;
+}
+#top h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, -100%);
+  width: 100%;
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  line-height: 2.75rem;
+}
+#top h1 span {
+  display: block;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+}
+#top .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, 40%);
+  width: 60%;
+}
+
+.our-story {
+  background-color: #063331;
+}
+.our-story .content {
+  display: flex;
+  flex-direction: column;
+}
+.our-story .content p {
+  font-size: 2rem;
+  order: 1;
+}
+.our-story .content img {
+  max-width: 90%;
+  margin-bottom: 5rem;
+}
+
+.our-food {
+  background: url(), #222;
+}
+
+.our-staff {
+  background-color: #222;
+}
+.our-staff .content img {
+  margin: 3rem auto;
+}
+.our-staff .content h3 {
+  font-size: 2rem;
+}
+.our-staff .content h3::after {
+  content: unset;
+}
+
+.our-wines {
+  background: url(), #222;
+}
+
+.book-now {
+  background: url(), #222;
+}
+
+.contact-info {
+  background: url(), #222;
+}
+.contact-info iframe {
+  width: 100%;
+  height: 35rem;
+}
+
+footer {
+  background-color: #ff3a3a;
+  padding: 2rem;
+  font-size: 2rem;
+  text-align: center;
 }
