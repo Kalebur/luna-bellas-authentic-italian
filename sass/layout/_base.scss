@@ -12,6 +12,9 @@
 body {
   overflow-x: hidden;
   color: $color-white;
+  font-family: $font-sans;
+  background-color: $color-tertiary;
+  font-size: 2rem;
 }
 
 a:link,
@@ -21,16 +24,13 @@ a:visited {
   text-transform: uppercase;
 }
 
-p {
-  font-size: 2rem;
-}
-
 .btn {
   background-color: $color-primary;
   padding: 1rem 3rem;
   border-radius: $radius-sm;
 
   font-size: 2rem;
+  font-weight: bold;
 }
 
 h1,
@@ -45,16 +45,16 @@ h3,
 
 h2 {
   font-size: 3rem;
+  margin-bottom: 5rem;
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 h2,
 h3 {
   position: relative;
-  margin-bottom: 2rem;
 
   &::after {
     content: "";
@@ -80,4 +80,46 @@ img {
   border: 5px solid $color-white;
 
   box-shadow: $shadow-images;
+}
+
+label {
+  display: block;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  border-radius: $radius-sm;
+  margin-bottom: 4rem;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+address {
+  margin-top: 3rem;
+
+  font-style: normal;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  top: -1;
+  left: -1;
+}
+
+@media screen and (min-width: 1000px) {
+  .content {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  input {
+    font-size: 2.5rem;
+  }
 }

@@ -21,11 +21,11 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <header id="top">
-      <div class="logo-nav">
-        <p class="logo"><i class="fa-solid fa-pizza-slice"></i> Luna Bella's</p>
+    <header id="top" class="no-js">
+      <div class="logo-nav no-js">
+        <p class="logo">Luna Bella's</p>
         <nav class="main-nav" aria-expanded="false">
-          <i class="fa-solid fa-bars hamburger"></i>
+          <i class="fa-solid fa-bars hamburger" tabindex="0"></i>
           <ul>
             <li class="nav-link"><a href="#story">Story</a></li>
             <li class="nav-link"><a href="#food">Food</a></li>
@@ -57,13 +57,24 @@
     <section class="our-food" id="food">
       <div class="content">
         <h2>Our Food</h2>
-        <h3>Pasta</h3>
-        <p>
+        <h3 class="food-type">Pasta</h3>
+        <p class="food-desc">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex sit rem
           autem libero pariatur recusandae. Iste sapiente doloremque unde
           dolorum itaque eaque consequatur magni odit id? Possimus, commodi ex!
           Dolore?
         </p>
+        <div class="switcher-buttons">
+          <button data-food-index="0" class="switcher-button active">
+            <span class="sr-only">Show Pasta Info</span>
+          </button>
+          <button data-food-index="1" class="switcher-button">
+            <span class="sr-only">Show Pizza Info</span>
+          </button>
+          <button data-food-index="2" class="switcher-button">
+            <span class="sr-only">Show Soups Info</span>
+          </button>
+        </div>
       </div>
     </section>
     <section class="our-staff" id="staff">
@@ -102,29 +113,37 @@
       </div>
     </section>
     <section class="book-now" id="book-now">
-      <h2>Book a Table</h2>
-      <form action="">
-        <div class="input-group">
-          <label for="name">Name</label>
-          <input type="text" autocomplete="name" />
-        </div>
-        <div class="input-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" autocomplete="tel-area-code" />
-        </div>
-        <div class="input-group">
-          <label for="reservation-time">Reservation Day/Time</label>
-          <input type="date" autocomplete="off" />
-        </div>
-        <div class="input-group">
-          <label for="phone">Reservation Time</label>
-          <input type="time" />
-        </div>
-        <div class="input-group">
-          <label for="guest-count">Guest Count</label>
-          <input type="number" autocomplete="off" min="2" max="20" value="2" />
-        </div>
-      </form>
+      <div class="content">
+        <h2>Book a Table</h2>
+        <form action="">
+          <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" autocomplete="name" />
+          </div>
+          <div class="input-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" autocomplete="tel-area-code" />
+          </div>
+          <div class="input-group">
+            <label for="reservation-time">Reservation Day/Time</label>
+            <input type="date" autocomplete="off" />
+          </div>
+          <div class="input-group">
+            <label for="phone">Reservation Time</label>
+            <input type="time" />
+          </div>
+          <div class="input-group">
+            <label for="guest-count">Guest Count</label>
+            <input
+              type="number"
+              autocomplete="off"
+              min="2"
+              max="20"
+              value="2"
+            />
+          </div>
+        </form>
+      </div>
     </section>
     <section class="contact-info" id="location">
       <div class="content">
@@ -159,11 +178,11 @@
 
             <h3>Socials</h3>
             <div class="social-icons">
-              <a href="#" class="social-icon"
+              <a href="javascript:void(0);" class="social-icon"
                 ><i class="fa-brands fa-facebook-f"></i></a
-              ><a href="#" class="social-icon"
+              ><a href="javascript:void(0);" class="social-icon"
                 ><i class="fa-brands fa-twitter"></i></a
-              ><a href="#" class="social-icon"
+              ><a href="javascript:void(0);" class="social-icon"
                 ><i class="fa-brands fa-instagram"></i
               ></a>
             </div>
@@ -175,5 +194,6 @@
       <p>&copy;2022 Luna Bella's Italian Cuisine</p>
       <p>Privacy Policy</p>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>

@@ -10,8 +10,15 @@
     justify-content: center;
     border-radius: $radius-circle;
     background-color: #135350;
+    transition: $transition-default;
+    border: 2px solid $color-white;
+    box-shadow: $shadow-images;
 
     font-size: 4rem;
+
+    &:active {
+      background-color: $color-primary;
+    }
   }
 }
 
@@ -23,6 +30,10 @@
     url("../assets/images/hero-background-sm-md.webp"), #111;
   background-size: cover;
   background-position: center;
+
+  &.no-js {
+    margin-top: 50vh;
+  }
 
   .logo-nav {
     .logo {
@@ -68,14 +79,64 @@
         justify-content: center;
         background-color: $color-primary;
         clip-path: circle(4rem at calc(100% - 6rem) 5.2rem);
+        transition: $transition-default;
 
         li {
           width: 100%;
           text-align: center;
           margin-left: 0;
+          display: none;
 
           &:not(:first-of-type) {
             margin-top: 6rem;
+          }
+        }
+
+        &.menu-active {
+          clip-path: circle(150% at calc(100% - 6rem) 5.2rem);
+          pointer-events: initial;
+
+          li {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &.no-js {
+      display: block;
+      height: 50vh;
+
+      .logo {
+        position: absolute;
+        top: -48vh;
+        left: 0;
+        z-index: 20;
+      }
+
+      .main-nav {
+        height: 50vh;
+        position: relative;
+        top: 0;
+        right: 0;
+        flex-basis: 100%;
+        transform: translate(0, -100%);
+        pointer-events: initial;
+
+        .hamburger {
+          display: none;
+        }
+
+        ul {
+          clip-path: none;
+          width: 100%;
+
+          li {
+            display: block;
+
+            &:not(:first-of-type) {
+              margin-top: 2rem;
+            }
           }
         }
       }
@@ -129,7 +190,53 @@
 }
 
 .our-food {
-  background: url(), $color-tertiary;
+  background: $gradient-bg-dark, url("../assets/images/pasta-sm-md.webp");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+
+  p {
+    margin-bottom: 6rem;
+    height: 30rem;
+  }
+
+  h3 {
+    margin-bottom: 3rem;
+    text-align: left;
+
+    &::after {
+      width: 30%;
+      left: 0;
+    }
+  }
+
+  .switcher-buttons {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .switcher-button {
+      height: 2rem;
+      width: 2rem;
+      border-radius: $radius-circle;
+      border: 0.2rem solid $color-white;
+      background-color: transparent;
+      cursor: pointer;
+      transition: $transition-default;
+
+      &.active {
+        background-color: $color-white;
+      }
+    }
+  }
 }
 
 .our-staff {
@@ -151,19 +258,39 @@
 }
 
 .our-wines {
-  background: url(), $color-tertiary;
+  background: $gradient-bg-med, url("../assets/images/wine-bg-sm-md.webp");
+  background-size: cover;
+  background-position: right;
 }
 
 .book-now {
-  background: url(), $color-tertiary;
+  background: url(), $color-secondary;
 }
 
 .contact-info {
   background: url(), $color-tertiary;
 
+  .hours {
+    text-transform: uppercase;
+    text-align: right;
+
+    p {
+      margin: 0 auto;
+      width: 75%;
+    }
+
+    span {
+      margin-left: 10rem;
+    }
+  }
+
   iframe {
     width: 100%;
     height: 35rem;
+  }
+
+  h3 {
+    margin: 5rem auto;
   }
 }
 
@@ -172,4 +299,34 @@ footer {
   padding: 2rem;
   font-size: 2rem;
   text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  #top {
+    .logo-nav {
+      .main-nav {
+        .hamburger {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .staff-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .staff-card {
+      &:first-of-type {
+        flex-basis: 100%;
+      }
+
+      &:not(:first-of-type) {
+        flex-basis: 33%;
+      }
+    }
+  }
 }
