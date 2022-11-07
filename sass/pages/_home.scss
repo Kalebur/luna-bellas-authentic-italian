@@ -145,7 +145,7 @@
 
   h1 {
     @include absolute-center;
-    transform: translate(-50%, -100%);
+    // transform: translate(-50%, -100%);
     width: 100%;
 
     font-family: $font-serif;
@@ -154,7 +154,7 @@
     text-align: center;
     letter-spacing: 1rem;
     text-transform: uppercase;
-    line-height: 2.75rem;
+    line-height: 3.5rem;
 
     span {
       display: block;
@@ -165,7 +165,7 @@
 
   .btn {
     @include absolute-center;
-    transform: translate(-50%, 40%);
+    transform: translate(-50%, 100%);
     width: 60%;
   }
 }
@@ -190,7 +190,7 @@
 }
 
 .our-food {
-  background: $gradient-bg-dark, url("../assets/images/pasta-sm-md.webp");
+  background: url("../assets/images/pasta-sm-md.webp");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -202,6 +202,7 @@
   p {
     margin-bottom: 6rem;
     height: 30rem;
+    position: relative;
   }
 
   h3 {
@@ -222,6 +223,7 @@
     bottom: 6rem;
     left: 50%;
     transform: translateX(-50%);
+    // z-index: 10;
 
     .switcher-button {
       height: 2rem;
@@ -236,6 +238,21 @@
         background-color: $color-white;
       }
     }
+  }
+
+  .btn-chevron {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $gradient-bg-dark;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
   }
 }
 
@@ -265,6 +282,13 @@
 
 .book-now {
   background: url(), $color-secondary;
+
+  button {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+  }
 }
 
 .contact-info {
@@ -275,18 +299,17 @@
     text-align: right;
 
     p {
+      width: 95%;
       margin: 0 auto;
-      width: 75%;
-    }
-
-    span {
-      margin-left: 10rem;
+      display: flex;
+      justify-content: space-between;
     }
   }
 
-  iframe {
-    width: 100%;
-    height: 35rem;
+  img {
+    border-radius: $radius-med;
+    border: none;
+    max-width: 100%;
   }
 
   h3 {
@@ -304,19 +327,241 @@ footer {
 @media screen and (min-width: 600px) {
   #top {
     .logo-nav {
+      padding-right: 3rem;
+      padding-top: 2rem;
+      align-items: baseline;
       .main-nav {
+        position: relative;
+        height: initial;
+        width: initial;
+        pointer-events: initial;
+
         .hamburger {
           display: none;
         }
+
+        ul {
+          clip-path: none;
+          background-color: transparent;
+          flex-direction: row;
+          font-size: 1.8rem;
+
+          li {
+            display: inline-block;
+
+            &:not(:first-of-type) {
+              margin-top: 0;
+              margin-left: 3rem;
+            }
+          }
+        }
       }
+    }
+
+    h1 {
+      font-size: 7.5rem;
+      line-height: 7.5rem;
+
+      span {
+        font-size: 3.75rem;
+      }
+    }
+
+    .btn {
+      width: 50%;
+      margin-top: 4rem;
+      font-size: 3rem;
+    }
+  }
+
+  .our-food {
+    .content {
+      p {
+        margin-bottom: 3rem;
+        padding-right: 3rem;
+
+        font-size: 2.5rem;
+      }
+
+      p,
+      h3 {
+        margin-left: 10%;
+        z-index: 10;
+      }
+
+      .switcher-buttons {
+        display: none;
+      }
+
+      .btn-chevron {
+        display: block;
+      }
+
+      .prev-food {
+        left: 3rem;
+      }
+
+      .next-food {
+        right: 3rem;
+        transform: translate(25%, -50%);
+      }
+    }
+  }
+
+  .staff-container {
+    display: flex;
+    flex-wrap: wrap;
+    .staff-card {
+      flex-basis: 50%;
+
+      h3 {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  .our-wines {
+    .content {
+      p {
+        padding: 0 10%;
+        margin-bottom: 10rem;
+      }
+    }
+  }
+
+  .book-now {
+    button {
+      width: 80%;
+    }
+  }
+
+  .contact-info {
+    font-size: 3rem;
+
+    iframe {
+      height: 50rem;
+    }
+
+    p {
+      padding: 0 10%;
+    }
+
+    address {
+      padding: 0 10%;
+    }
+
+    h3 {
+      margin-top: 10rem;
     }
   }
 }
 
 @media screen and (min-width: 1000px) {
+  #top {
+    height: 100vh;
+
+    .logo-nav {
+      .logo {
+        font-size: 2.5rem;
+      }
+
+      .main-nav {
+        ul {
+          font-size: 2.5rem;
+
+          li {
+            a {
+              padding-bottom: 1rem;
+              border-bottom: 5px solid transparent;
+              transition: $transition-default;
+
+              &:hover {
+                border-bottom: 5px solid $color-primary;
+              }
+            }
+
+            &:not(:first-of-type) {
+              margin-left: 5rem;
+            }
+          }
+        }
+      }
+    }
+
+    h1 {
+      font-size: 10rem;
+      font-weight: 100;
+      line-height: 9rem;
+      // transform: translate(-50%, -50%);
+
+      span {
+        font-size: 5rem;
+      }
+    }
+
+    .btn {
+      transform: translate(-50%, 200%);
+      width: 40%;
+      transition: $transition-default;
+
+      &:hover {
+        background-color: darken($color-primary, 25);
+        box-shadow: $shadow-images;
+        transform: translate(-50%, 175%);
+      }
+    }
+  }
+
+  section.our-story {
+    .content {
+      width: 60%;
+      display: grid;
+      background: $color-secondary-light;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "header header"
+        "info photo";
+
+      h2 {
+        grid-area: header;
+      }
+
+      p {
+        grid-area: info;
+      }
+
+      img {
+        grid-area: photo;
+      }
+
+      p,
+      img {
+        align-self: center;
+      }
+    }
+  }
+
+  .our-food {
+    .content {
+      .prev-food {
+        left: 15%;
+      }
+
+      .next-food {
+        right: 15%;
+      }
+
+      .prev-food,
+      .next-food {
+        &:hover {
+          -webkit-text-stroke: 2px $color-white;
+          text-shadow: $shadow-glow;
+        }
+      }
+    }
+  }
+
   .staff-container {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
 
     .staff-card {
@@ -326,6 +571,47 @@ footer {
 
       &:not(:first-of-type) {
         flex-basis: 33%;
+      }
+    }
+  }
+
+  .our-wines {
+    font-size: 2.5rem;
+  }
+
+  section.book-now {
+    .content {
+      background: $color-secondary-light;
+    }
+  }
+
+  .contact-info {
+    .content {
+      width: 100%;
+
+      h2 {
+        &::after {
+          width: 40%;
+          left: 30%;
+        }
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 10%;
+
+        .hours {
+          h3 {
+            margin-top: 0;
+          }
+        }
+
+        .contact-and-socials {
+          width: 50%;
+          grid-column: 1 / span 2;
+          justify-self: center;
+        }
       }
     }
   }

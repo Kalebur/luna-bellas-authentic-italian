@@ -24,8 +24,8 @@
     <header id="top" class="no-js">
       <div class="logo-nav no-js">
         <p class="logo">Luna Bella's</p>
-        <nav class="main-nav" aria-expanded="false">
-          <i class="fa-solid fa-bars hamburger" tabindex="0"></i>
+        <nav class="main-nav" aria-expanded="false" role="navigation">
+          <i class="fa-solid fa-bars hamburger"></i>
           <ul>
             <li class="nav-link"><a href="#story">Story</a></li>
             <li class="nav-link"><a href="#food">Food</a></li>
@@ -42,10 +42,10 @@
       <div class="content">
         <h2>Our Story</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-          consequuntur ipsa voluptas aliquam, aperiam illo officiis fugiat totam
-          earum? Quis cum iusto laboriosam commodi aliquam, nam nulla maiores ea
-          excepturi.
+          Luna Bella got her love for food and cooking from her grandmother,
+          Electra. At a young age, Electra began teaching her how to cook with
+          the traditional Italian recipes she'd grown up with in Florence,
+          Italy.
         </p>
         <img
           src="assets/images/grandma.webp"
@@ -75,6 +75,11 @@
             <span class="sr-only">Show Soups Info</span>
           </button>
         </div>
+        <button class="btn-chevron prev-food">
+          <i class="fa-solid fa-chevron-left"></i></button
+        ><button class="btn-chevron next-food">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
     </section>
     <section class="our-staff" id="staff">
@@ -82,19 +87,31 @@
         <h2>Meet Our Staff</h2>
         <div class="staff-container">
           <div class="staff-card">
-            <img src="assets/images/luna-bella.webp" />
+            <img
+              src="assets/images/luna-bella.webp"
+              alt="Head chef, Luna Bella, in the kitchen."
+            />
             <h3>Head Chef &mdash; Luna Bella</h3>
           </div>
           <div class="staff-card">
-            <img src="assets/images/constantino.webp" />
+            <img
+              src="assets/images/constantino.webp"
+              alt="Sous Chef, Constantino, plating up some spaghetti."
+            />
             <h3>Sous Chef &mdash; Constantino</h3>
           </div>
           <div class="staff-card">
-            <img src="assets/images/trevor.webp" />
+            <img
+              src="assets/images/trevor.webp"
+              alt="Sous Chef, Trevor, in the kitchen"
+            />
             <h3>Sous Chef &mdash; Trevor</h3>
           </div>
           <div class="staff-card">
-            <img src="assets/images/stephen.webp" />
+            <img
+              src="assets/images/stephen.webp"
+              alt="Stephen, the restaurant's Maître d'"
+            />
             <h3>Maître d' - Stephen</h3>
           </div>
         </div>
@@ -118,19 +135,19 @@
         <form action="">
           <div class="input-group">
             <label for="name">Name</label>
-            <input type="text" autocomplete="name" />
+            <input type="text" name="name" autocomplete="name" />
           </div>
           <div class="input-group">
             <label for="phone">Phone Number</label>
-            <input type="tel" autocomplete="tel-area-code" />
+            <input type="tel" name="phone" autocomplete="tel-area-code" />
           </div>
           <div class="input-group">
-            <label for="reservation-time">Reservation Day/Time</label>
-            <input type="date" autocomplete="off" />
+            <label for="reservation-day">Reservation Day/Time</label>
+            <input type="date" name="reservation-day" autocomplete="off" />
           </div>
           <div class="input-group">
-            <label for="phone">Reservation Time</label>
-            <input type="time" />
+            <label for="reservation-time">Reservation Time</label>
+            <input type="time" name="reservation-time" value="19:30" />
           </div>
           <div class="input-group">
             <label for="guest-count">Guest Count</label>
@@ -140,8 +157,10 @@
               min="2"
               max="20"
               value="2"
+              name="guest-count"
             />
           </div>
+          <button class="btn" id="btn-book">Book Now</button>
         </form>
       </div>
     </section>
@@ -149,14 +168,10 @@
       <div class="content">
         <h2>Our Location</h2>
         <div class="contact-container">
-          <iframe
-            class="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3141.383607104173!2d-84.51949948436756!3d38.061446503386435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88424480b138eb35%3A0xb6b8942a1d7f9f57!2sOld%20W%20Main%20St%2C%20Lexington%2C%20KY%2040508!5e0!3m2!1sen!2sus!4v1667530604077!5m2!1sen!2sus"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <img
+            src="assets/images/luna-bellas-loc.webp"
+            alt="Location of Luna Bella's on Google maps"
+          />
           <div class="hours">
             <h3>Hours</h3>
             <p>mon:<span class="time">4pm &mdash; 10pm</span></p>
@@ -172,17 +187,26 @@
             <p>P:(555) 555-5555</p>
             <p>E:hello@lunabellasitalian.com</p>
             <address>
-              7890 Old W Main St <br />
+              1307 W Main St <br />
               Lexington, KY 40508
             </address>
 
             <h3>Socials</h3>
             <div class="social-icons">
-              <a href="javascript:void(0);" class="social-icon"
+              <a
+                href="javascript:void(0);"
+                class="social-icon"
+                aria-label="Visit us on Facebook"
                 ><i class="fa-brands fa-facebook-f"></i></a
-              ><a href="javascript:void(0);" class="social-icon"
+              ><a
+                href="javascript:void(0);"
+                class="social-icon"
+                aria-label="Follow us on Twitter"
                 ><i class="fa-brands fa-twitter"></i></a
-              ><a href="javascript:void(0);" class="social-icon"
+              ><a
+                href="javascript:void(0);"
+                class="social-icon"
+                aria-label="Follow us on Instagram"
                 ><i class="fa-brands fa-instagram"></i
               ></a>
             </div>

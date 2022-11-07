@@ -33,6 +33,22 @@ a:visited {
   font-weight: bold;
 }
 
+.btn-chevron {
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: $transition-default;
+  cursor: pointer;
+
+  font-size: 8rem;
+
+  &:active,
+  &:hover {
+    color: $color-primary;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -113,10 +129,45 @@ address {
   left: -1;
 }
 
+button {
+  border: none;
+  color: $color-white;
+}
+
+@media screen and (min-width: 600px) {
+  .content {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  label {
+    font-size: 2.5rem;
+  }
+}
+
 @media screen and (min-width: 1000px) {
+  section {
+    padding: 3rem 0;
+
+    &:nth-of-type(odd) {
+      .content {
+        border: 1px solid $color-white;
+        border-radius: $radius-med;
+        background: $gradient-bg-med;
+      }
+    }
+  }
+
   .content {
     width: 50%;
-    margin: 0 auto;
   }
 
   input {

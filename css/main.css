@@ -32,6 +32,19 @@ a:visited {
   font-weight: bold;
 }
 
+.btn-chevron {
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.4s;
+  cursor: pointer;
+  font-size: 8rem;
+}
+.btn-chevron:active, .btn-chevron:hover {
+  color: #ff3a3a;
+}
+
 h1,
 h2,
 h3,
@@ -110,10 +123,37 @@ address {
   left: -1;
 }
 
+button {
+  border: none;
+  color: #fff;
+}
+
+@media screen and (min-width: 600px) {
+  .content {
+    width: 90%;
+    margin: 0 auto;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 3rem;
+  }
+  label {
+    font-size: 2.5rem;
+  }
+}
 @media screen and (min-width: 1000px) {
+  section {
+    padding: 3rem 0;
+  }
+  section:nth-of-type(odd) .content {
+    border: 1px solid #fff;
+    border-radius: 2.5rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  }
   .content {
     width: 50%;
-    margin: 0 auto;
   }
   input {
     font-size: 2.5rem;
@@ -262,7 +302,6 @@ address {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transform: translate(-50%, -100%);
   width: 100%;
   font-family: "Playfair Display", serif;
   font-size: 3.5rem;
@@ -270,7 +309,7 @@ address {
   text-align: center;
   letter-spacing: 1rem;
   text-transform: uppercase;
-  line-height: 2.75rem;
+  line-height: 3.5rem;
 }
 #top h1 span {
   display: block;
@@ -282,7 +321,7 @@ address {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transform: translate(-50%, 40%);
+  transform: translate(-50%, 100%);
   width: 60%;
 }
 
@@ -303,7 +342,7 @@ address {
 }
 
 .our-food {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../assets/images/pasta-sm-md.webp");
+  background: url("../assets/images/pasta-sm-md.webp");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -314,6 +353,7 @@ address {
 .our-food p {
   margin-bottom: 6rem;
   height: 30rem;
+  position: relative;
 }
 .our-food h3 {
   margin-bottom: 3rem;
@@ -344,6 +384,19 @@ address {
 .our-food .switcher-buttons .switcher-button.active {
   background-color: #fff;
 }
+.our-food .btn-chevron {
+  display: none;
+}
+.our-food::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
 
 .our-staff {
   background-color: #222;
@@ -367,6 +420,12 @@ address {
 .book-now {
   background: url(), #063331;
 }
+.book-now button {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  cursor: pointer;
+}
 
 .contact-info {
   background: url(), #222;
@@ -376,15 +435,15 @@ address {
   text-align: right;
 }
 .contact-info .hours p {
+  width: 95%;
   margin: 0 auto;
-  width: 75%;
+  display: flex;
+  justify-content: space-between;
 }
-.contact-info .hours span {
-  margin-left: 10rem;
-}
-.contact-info iframe {
-  width: 100%;
-  height: 35rem;
+.contact-info img {
+  border-radius: 2.5rem;
+  border: none;
+  max-width: 100%;
 }
 .contact-info h3 {
   margin: 5rem auto;
@@ -398,14 +457,173 @@ footer {
 }
 
 @media screen and (min-width: 600px) {
+  #top .logo-nav {
+    padding-right: 3rem;
+    padding-top: 2rem;
+    align-items: baseline;
+  }
+  #top .logo-nav .main-nav {
+    position: relative;
+    height: initial;
+    width: initial;
+    pointer-events: initial;
+  }
   #top .logo-nav .main-nav .hamburger {
     display: none;
   }
-}
-@media screen and (min-width: 1000px) {
+  #top .logo-nav .main-nav ul {
+    -webkit-clip-path: none;
+            clip-path: none;
+    background-color: transparent;
+    flex-direction: row;
+    font-size: 1.8rem;
+  }
+  #top .logo-nav .main-nav ul li {
+    display: inline-block;
+  }
+  #top .logo-nav .main-nav ul li:not(:first-of-type) {
+    margin-top: 0;
+    margin-left: 3rem;
+  }
+  #top h1 {
+    font-size: 7.5rem;
+    line-height: 7.5rem;
+  }
+  #top h1 span {
+    font-size: 3.75rem;
+  }
+  #top .btn {
+    width: 50%;
+    margin-top: 4rem;
+    font-size: 3rem;
+  }
+  .our-food .content p {
+    margin-bottom: 3rem;
+    padding-right: 3rem;
+    font-size: 2.5rem;
+  }
+  .our-food .content p,
+.our-food .content h3 {
+    margin-left: 10%;
+    z-index: 10;
+  }
+  .our-food .content .switcher-buttons {
+    display: none;
+  }
+  .our-food .content .btn-chevron {
+    display: block;
+  }
+  .our-food .content .prev-food {
+    left: 3rem;
+  }
+  .our-food .content .next-food {
+    right: 3rem;
+    transform: translate(25%, -50%);
+  }
   .staff-container {
     display: flex;
     flex-wrap: wrap;
+  }
+  .staff-container .staff-card {
+    flex-basis: 50%;
+  }
+  .staff-container .staff-card h3 {
+    font-size: 1.8rem;
+  }
+  .our-wines .content p {
+    padding: 0 10%;
+    margin-bottom: 10rem;
+  }
+  .book-now button {
+    width: 80%;
+  }
+  .contact-info {
+    font-size: 3rem;
+  }
+  .contact-info iframe {
+    height: 50rem;
+  }
+  .contact-info p {
+    padding: 0 10%;
+  }
+  .contact-info address {
+    padding: 0 10%;
+  }
+  .contact-info h3 {
+    margin-top: 10rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #top {
+    height: 100vh;
+  }
+  #top .logo-nav .logo {
+    font-size: 2.5rem;
+  }
+  #top .logo-nav .main-nav ul {
+    font-size: 2.5rem;
+  }
+  #top .logo-nav .main-nav ul li a {
+    padding-bottom: 1rem;
+    border-bottom: 5px solid transparent;
+    transition: all 0.4s;
+  }
+  #top .logo-nav .main-nav ul li a:hover {
+    border-bottom: 5px solid #ff3a3a;
+  }
+  #top .logo-nav .main-nav ul li:not(:first-of-type) {
+    margin-left: 5rem;
+  }
+  #top h1 {
+    font-size: 10rem;
+    font-weight: 100;
+    line-height: 9rem;
+  }
+  #top h1 span {
+    font-size: 5rem;
+  }
+  #top .btn {
+    transform: translate(-50%, 200%);
+    width: 40%;
+    transition: all 0.4s;
+  }
+  #top .btn:hover {
+    background-color: #ba0000;
+    box-shadow: 0.5rem 1.5rem 1.5rem rgba(0, 0, 0, 0.9);
+    transform: translate(-50%, 175%);
+  }
+  section.our-story .content {
+    width: 60%;
+    display: grid;
+    background: #135350;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "header header" "info photo";
+  }
+  section.our-story .content h2 {
+    grid-area: header;
+  }
+  section.our-story .content p {
+    grid-area: info;
+  }
+  section.our-story .content img {
+    grid-area: photo;
+  }
+  section.our-story .content p,
+section.our-story .content img {
+    align-self: center;
+  }
+  .our-food .content .prev-food {
+    left: 15%;
+  }
+  .our-food .content .next-food {
+    right: 15%;
+  }
+  .our-food .content .prev-food:hover,
+.our-food .content .next-food:hover {
+    -webkit-text-stroke: 2px #fff;
+    text-shadow: 0 0 3rem #ff3a3a;
+  }
+  .staff-container {
     justify-content: space-between;
   }
   .staff-container .staff-card:first-of-type {
@@ -413,5 +631,31 @@ footer {
   }
   .staff-container .staff-card:not(:first-of-type) {
     flex-basis: 33%;
+  }
+  .our-wines {
+    font-size: 2.5rem;
+  }
+  section.book-now .content {
+    background: #135350;
+  }
+  .contact-info .content {
+    width: 100%;
+  }
+  .contact-info .content h2::after {
+    width: 40%;
+    left: 30%;
+  }
+  .contact-info .content .contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 10%;
+  }
+  .contact-info .content .contact-container .hours h3 {
+    margin-top: 0;
+  }
+  .contact-info .content .contact-container .contact-and-socials {
+    width: 50%;
+    grid-column: 1/span 2;
+    justify-self: center;
   }
 }
