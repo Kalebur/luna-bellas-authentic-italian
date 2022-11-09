@@ -4,6 +4,11 @@ $color-secondary-light: #135350;
 $color-tertiary: #222;
 $color-white: #fff;
 
+$border-invalid: 2px solid red;
+$border-invalid-focus: 4px solid red;
+$border-focus: 5px solid springgreen;
+$border-white: 5px solid $color-white;
+
 $font-sans: "Montserrat", sans-serif;
 $font-serif: "Playfair Display", serif;
 
@@ -17,6 +22,7 @@ $radius-med: 2.5rem;
 
 $shadow-glow: 0 0 3rem $color-primary;
 $shadow-images: 0.5rem 1.5rem 1.5rem rgba(0, 0, 0, 0.9);
+$shadow-invalid: 0 0 5rem red;
 
 $transition-fast: all 0.1s;
 $transition-default: all 0.4s;

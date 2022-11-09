@@ -28,9 +28,14 @@ a:visited {
   background-color: $color-primary;
   padding: 1rem 3rem;
   border-radius: $radius-sm;
+  transition: $transition-default;
 
   font-size: 2rem;
   font-weight: bold;
+
+  &:hover {
+    transform: translateY(-25%);
+  }
 }
 
 .btn-chevron {
@@ -93,7 +98,7 @@ img {
   display: block;
   margin: 1.5rem auto;
   border-radius: $radius-huge;
-  border: 5px solid $color-white;
+  border: $border-white;
 
   box-shadow: $shadow-images;
 }
@@ -104,13 +109,40 @@ label {
   margin-bottom: 1rem;
 }
 
-input {
+input,
+select {
   display: block;
   width: 100%;
   border-radius: $radius-sm;
-  margin-bottom: 4rem;
   padding: 1rem;
   font-size: 2rem;
+  transition: $transition-default;
+
+  &.invalid {
+    border: $border-invalid;
+    box-shadow: $shadow-invalid;
+    outline: $border-invalid;
+
+    &:focus-visible {
+      border: 2px solid black;
+      outline: $border-invalid-focus;
+    }
+
+    & + small {
+      display: block;
+    }
+  }
+}
+
+small {
+  display: none;
+  text-align: right;
+  margin-top: 0.5rem;
+  transition: $transition-default;
+}
+
+.input-group {
+  margin-bottom: 4rem;
 }
 
 address {
@@ -132,6 +164,16 @@ address {
 button {
   border: none;
   color: $color-white;
+}
+
+input,
+select,
+button,
+a {
+  &:focus-visible {
+    border: 4px solid black;
+    outline: $border-focus;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -164,6 +206,11 @@ button {
         background: $gradient-bg-med;
       }
     }
+  }
+
+  .btn:hover {
+    background-color: darken($color-primary, 25);
+    box-shadow: $shadow-images;
   }
 
   .content {

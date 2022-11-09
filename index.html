@@ -21,6 +21,25 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
+    <div class="modal">
+      <div class="content">
+        <h2>Luna Bella's</h2>
+        <p>Thank you for your reservation, <span id="customer-name"></span>!</p>
+        <p>
+          Your table for <span id="num-guests"></span> has been reserved for
+          <span id="reservation-date"></span> at
+          <span id="reserve-time"></span>. We look forward to serving you!
+        </p>
+        <p>
+          Changes to the number of guests on your reservation can be made for
+          the next 24 hours. For any additional questions or cancellations,
+          please call us at (555) 555-5555.
+        </p>
+        <a href="javascript:void(0);" class="btn" id="btn-modal-close"
+          >Close Window</a
+        >
+      </div>
+    </div>
     <header id="top" class="no-js">
       <div class="logo-nav no-js">
         <p class="logo">Luna Bella's</p>
@@ -41,16 +60,29 @@
     <section class="our-story" id="story">
       <div class="content">
         <h2>Our Story</h2>
-        <p>
-          Luna Bella got her love for food and cooking from her grandmother,
-          Electra. At a young age, Electra began teaching her how to cook with
-          the traditional Italian recipes she'd grown up with in Florence,
-          Italy.
-        </p>
+        <div class="story-text">
+          <p>
+            Luna Bella got her love for food and cooking from her grandmother,
+            Electra. At a young age, Electra began teaching her how to cook with
+            the traditional Italian recipes she'd grown up with in Florence,
+            Italy. Electra was born and raised in Italy, moving to the U.S. in
+            her mid-30s, so she passed on not only the recipes she loved but
+            also stories of life there, and Luna Bella fell in love with all of
+            it.
+          </p>
+          <p>
+            After graduating high school, Luna Bella moved to Italy to pursue a
+            culinary education and to get closer to the types of food her
+            grandmother taught her to make. She finished her education and spent
+            another 10 years working and learning in Rome. It was during this
+            time that she met Constantino and they became fast friends who
+            decided to open a restaurant together in America in order to share
+            genuine Italian recipes with everyone.
+          </p>
+        </div>
         <img
           src="assets/images/grandma.webp"
           alt="Luna Bella's grandmother, Electra"
-          srcset=""
         />
       </div>
     </section>
@@ -73,6 +105,12 @@
           </button>
           <button data-food-index="2" class="switcher-button">
             <span class="sr-only">Show Soups Info</span>
+          </button>
+          <button data-food-index="3" class="switcher-button">
+            <span class="sr-only">Show Breads Info</span>
+          </button>
+          <button data-food-index="4" class="switcher-button">
+            <span class="sr-only">Show Desserts Info</span>
           </button>
         </div>
         <button class="btn-chevron prev-food">
@@ -133,23 +171,37 @@
       <div class="content">
         <h2>Book a Table</h2>
         <form action="">
-          <div class="input-group">
+          <p class="input-group">
             <label for="name">Name</label>
-            <input type="text" name="name" autocomplete="name" />
-          </div>
-          <div class="input-group">
+            <input id="name" type="text" name="name" autocomplete="name" />
+            <small>Name must be at least 2 letters long.</small>
+          </p>
+          <p class="input-group">
             <label for="phone">Phone Number</label>
-            <input type="tel" name="phone" autocomplete="tel-area-code" />
-          </div>
-          <div class="input-group">
+            <input id="tel" type="tel" name="phone" autocomplete="tel" />
+            <small
+              >Please enter a valid telephone number (e.g. (555)
+              555-5555)</small
+            >
+          </p>
+          <p class="input-group">
             <label for="reservation-day">Reservation Day/Time</label>
-            <input type="date" name="reservation-day" autocomplete="off" />
-          </div>
-          <div class="input-group">
+            <input
+              id="date"
+              type="date"
+              name="reservation-day"
+              autocomplete="off"
+            />
+            <small
+              >Reservations must be made
+              <strong>two (2) days in advance.</strong></small
+            >
+          </p>
+          <p class="input-group">
             <label for="reservation-time">Reservation Time</label>
-            <input type="time" name="reservation-time" value="19:30" />
-          </div>
-          <div class="input-group">
+            <select name="reservation-time" id="reservation-time"></select>
+          </p>
+          <p class="input-group">
             <label for="guest-count">Guest Count</label>
             <input
               type="number"
@@ -158,8 +210,9 @@
               max="20"
               value="2"
               name="guest-count"
+              id="guest-count"
             />
-          </div>
+          </p>
           <button class="btn" id="btn-book">Book Now</button>
         </form>
       </div>
