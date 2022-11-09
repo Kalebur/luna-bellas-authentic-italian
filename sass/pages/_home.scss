@@ -107,7 +107,8 @@
       z-index: 10;
       pointer-events: none;
 
-      .hamburger {
+      .hamburger,
+      .close-btn {
         height: 5rem;
         width: 5rem;
         display: flex;
@@ -123,6 +124,21 @@
         color: $color-white;
         z-index: 10;
         pointer-events: initial;
+      }
+
+      .hamburger {
+        &.menu-active {
+          display: none;
+
+          & + .close-btn {
+            display: block;
+          }
+        }
+      }
+
+      .close-btn {
+        display: none;
+        transform: translateX(-35%);
       }
 
       ul {
@@ -329,6 +345,11 @@
       &::after {
         content: unset;
       }
+    }
+
+    p {
+      padding: 0 5%;
+      margin: 3rem;
     }
   }
 }
@@ -687,6 +708,7 @@ footer {
       .btn {
         width: 100%;
         margin: 5rem auto;
+        font-size: 3rem;
       }
     }
   }
@@ -717,6 +739,10 @@ footer {
           width: 50%;
           grid-column: 1 / span 2;
           justify-self: center;
+
+          .social-icon:hover {
+            background-color: $color-primary;
+          }
         }
       }
     }

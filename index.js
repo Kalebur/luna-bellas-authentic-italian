@@ -30,6 +30,7 @@ const globalVars = {
 
 window.addEventListener("DOMContentLoaded", () => {
   globalVars.hamburger = document.querySelector(".hamburger");
+  globalVars.btnCloseNav = document.querySelector(".close-btn");
   globalVars.switcherButtons = document.querySelectorAll(".switcher-button");
   globalVars.navList = document.querySelector(".main-nav ul");
   globalVars.foodSection = document.querySelector(".our-food");
@@ -58,6 +59,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Display/hide mobile nav when clicking hamburger
   globalVars.hamburger.addEventListener("click", function () {
+    toggleMenu();
+  });
+
+  globalVars.btnCloseNav.addEventListener("click", function () {
     toggleMenu();
   });
 
@@ -99,6 +104,8 @@ window.addEventListener("DOMContentLoaded", () => {
       "data-next-index",
       getFoodIndex(nextIndex - 1, "prev")
     );
+
+    setActiveSwitcherBtn(nextIndex - 1);
   });
 
   globalVars.btnPrevFood.addEventListener("click", function () {
@@ -112,6 +119,8 @@ window.addEventListener("DOMContentLoaded", () => {
       "data-next-index",
       getFoodIndex(nextIndex + 1, "next")
     );
+
+    setActiveSwitcherBtn(nextIndex + 1);
   });
 
   // Close nav menu when clicking on links
@@ -319,4 +328,12 @@ function isValidReservationDate() {
     `${reservationDate[1]}/${reservationDate[2]}/${reservationDate[0]}`
   );
   return reservationDate >= earliestValidDate;
+}
+
+function setActiveSwitcherBtn(index) {
+  globalVars.switcherButtons.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+
+  globalVars.switcherButtons[index].classList.add("active");
 }

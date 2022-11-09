@@ -311,7 +311,8 @@ a:focus-visible {
   z-index: 10;
   pointer-events: none;
 }
-#top .logo-nav .main-nav .hamburger {
+#top .logo-nav .main-nav .hamburger,
+#top .logo-nav .main-nav .close-btn {
   height: 5rem;
   width: 5rem;
   display: flex;
@@ -326,6 +327,16 @@ a:focus-visible {
   color: #fff;
   z-index: 10;
   pointer-events: initial;
+}
+#top .logo-nav .main-nav .hamburger.menu-active {
+  display: none;
+}
+#top .logo-nav .main-nav .hamburger.menu-active + .close-btn {
+  display: block;
+}
+#top .logo-nav .main-nav .close-btn {
+  display: none;
+  transform: translateX(-35%);
 }
 #top .logo-nav .main-nav ul {
   height: 100%;
@@ -504,6 +515,10 @@ a:focus-visible {
 }
 .our-staff .content h3::after {
   content: unset;
+}
+.our-staff .content p {
+  padding: 0 5%;
+  margin: 3rem;
 }
 
 .our-wines {
@@ -764,6 +779,7 @@ section.our-story .content img {
   section.book-now .content .btn {
     width: 100%;
     margin: 5rem auto;
+    font-size: 3rem;
   }
   .contact-info .content {
     width: 100%;
@@ -784,5 +800,8 @@ section.our-story .content img {
     width: 50%;
     grid-column: 1/span 2;
     justify-self: center;
+  }
+  .contact-info .content .contact-container .contact-and-socials .social-icon:hover {
+    background-color: #ff3a3a;
   }
 }
