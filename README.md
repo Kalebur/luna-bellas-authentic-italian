@@ -1,4 +1,6 @@
 # Luna Bella's Authentic Italian
+![Screenshot of Luna Bella's Authentic Italian restaurant website](https://kalebur.github.io/portfolio/assets/images/luna-lg.webp)
+
 I've been tasked with creating a website for Luna Bella's Authentic Italian restaurant. The client has requested that
 the site has a simple but modern design. The site should provide descriptions of their most commonly ordered categories
 of meals, show images of the primary members of the kitchen staff, explain that they have a wide selection of wines to
